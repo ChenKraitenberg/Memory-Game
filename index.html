@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Number Memory Game</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Memory Game</h1>
+    <button id="instructions-btn" class="btn btn-primary">Instructions</button>
+    <form id="settings-form">
+      <div class="form-group">
+        <label for="player-name">Player Name:</label>
+        <input type="text" class="form-control" id="player-name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="card-amount">Number of Cards (Pairs):</label>
+        <input type="number" class="form-control" id="card-amount" min="2" max="30" required>
+      </div>
+
+      <div class="form-group">
+        <label for="difficulty-level">Difficulty Level:</label>
+        <select id="difficulty-level" class="form-control">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary start-game-btn">Start Game</button>
+    </form>
+    <hr>
+    <div id="game-board"></div>
+    <div id="timer">Time: 0</div>
+    <button id="restart-btn" class="btn btn-primary" style="display: none;">Play Again</button>
+    <div id="instructions-panel" class="instructions-panel" style="display: none;"></div>
+  </div>
+
+  <div id="instructions-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-btn" class="close">&times;</span>
+      <h2>Instructions</h2>
+      <p>
+        <p>Here are the instructions for the memory game:</p>
+        <ol>
+          <li>The game board will display a grid of facedown cards. Click on any card to reveal its number.</li>
+          <li>Try to remember the numbers and their positions.</li>
+          <li>Click on another card to reveal its number. If the numbers match, the cards will stay face up. Otherwise, they will be flipped face down again.</li>
+          <li>Continue selecting cards and matching pairs until all cards are revealed.</li>
+          <li>Once you have matched all the pairs, a congratulatory message will appear with your completion time.</li>
+          <li>If you want to play again, click the "Play Again" button.</li>
+        </ol>
+        <p>Difficulty Levels:</p>
+        <ul>
+          <li><strong>Easy:</strong> The cards' positions will change every 2 minutes.</li>
+          <li><strong>Medium:</strong> The cards' positions will change every 10 seconds.</li>
+          <li><strong>Hard:</strong> The cards' positions will change every 5 seconds.</li>
+        </ul>
+        <p>Choose the difficulty level that suits your preference and challenge yourself!</p>
+        <p>Have fun and enjoy the game!</p>
+      </p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
